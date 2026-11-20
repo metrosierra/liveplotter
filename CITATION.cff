@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: "liveplotter: non-blocking live plotting of experimental data"
+abstract: >-
+  A Python package for real-time visualisation of experimental data. User
+  functions returning NumPy arrays are polled in background threads and
+  plotted with pyqtgraph in a separate process, so acquisition code, consoles
+  and IDEs are never blocked by the GUI.
+authors:
+  - family-names: Wu
+    given-names: Mingsong
+    # orcid: "https://orcid.org/XXXX-XXXX-XXXX-XXXX"
+    # affiliation: "Your institution"
+repository-code: "https://github.com/metrosierra/liveplotter"
+url: "https://github.com/metrosierra/liveplotter"
+license: GPL-3.0-only
+version: 0.1.0
+date-released: "2026-11-20"
+keywords:
+  - live plotting
+  - real-time
+  - pyqtgraph
+  - data acquisition
+  - experiment
+  - laboratory
+# After archiving a release on Zenodo, add its DOI here:
+# identifiers:
+#   - type: doi
+#     value: 10.5281/zenodo.XXXXXXX

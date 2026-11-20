@@ -1,0 +1,59 @@
+[project]
+name = "liveplotter"
+version = "0.1.0"
+description = "Non-blocking live plotting of experimental data with pyqtgraph, running in a separate process."
+readme = "README.md"
+authors = [
+    { name = "Mingsong Wu" },
+]
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+keywords = [
+    "live plotting",
+    "real-time",
+    "pyqtgraph",
+    "data acquisition",
+    "experiment",
+    "laboratory",
+    "visualisation",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+# A Qt binding is deliberately not a hard dependency: pyqtgraph works with
+# any of them, and installing a second binding next to one the user already
+# has can cause conflicts. Pick one through the extras below.
+dependencies = [
+    "numpy",
+    # 0.12.4: oldest version checked to have ColorBarItem(colorMap=...) and
+    # the QtCore.Signal/Slot aliases used here.
+    "pyqtgraph>=0.12.4",
+    "multiprocess",
+]
+
+[project.optional-dependencies]
+pyqt5 = ["PyQt5"]
+pyqt6 = ["PyQt6"]
+pyside6 = ["PySide6"]
+
+[project.urls]
+Homepage = "https://github.com/metrosierra/liveplotter"
+Repository = "https://github.com/metrosierra/liveplotter"
+Issues = "https://github.com/metrosierra/liveplotter/issues"
+Changelog = "https://github.com/metrosierra/liveplotter/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["uv_build>=0.11.32,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+# The Qt-binding extras are alternatives; tell uv never to install two at once.
+conflicts = [
+    [{ extra = "pyqt5" }, { extra = "pyqt6" }, { extra = "pyside6" }],
+]
