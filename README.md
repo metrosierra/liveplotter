@@ -87,7 +87,7 @@ def stop_acquisition():
 
 
 if __name__ == "__main__":          # required on Windows, recommended everywhere
-    agent = LivePlotAgent(clock=0.1)
+    agent = LivePlotAgent(clock=0.01)
 
     agent.new_liveplot(
         data_func=read_two_channels,
@@ -112,7 +112,7 @@ More complete scripts are in [`examples/`](examples/).
 
 ## Usage
 
-### `LivePlotAgent(clock=0.1, verbose=False)`
+### `LivePlotAgent(clock=0.01, verbose=False)`
 
 Creating the agent starts the plotting process, which has no windows yet.
 One agent can manage several windows.
